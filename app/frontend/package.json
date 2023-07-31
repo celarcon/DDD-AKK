@@ -1,15 +1,20 @@
 {
   "name": "frontend",
-  "author": "codelytv",
+  "author": "Santiago Cebrián Alarcón",
+  "version": "1.0.0",
+  "description": "frontend",
   "license": "MIT",
   "private": true,
-  "version": "1.0.0",
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.8.1"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "dev:frontend": "vite --port 3000 --open",
+    "dev:frontend": "vite --port 3000",
     "test:frontend": "jest --watch --config=jest.config.ts",
     "build": "vite build",
     "preview": "vite preview"

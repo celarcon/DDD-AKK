@@ -6,9 +6,19 @@ Si quisesemos mas contextos como un backoffice o un blog crear carpeta en app co
 
 # Para iniciar la aplicación
 
-npm run dev:backend
+make start
 
 # Para tirar los tests
 
-npm run test:backend:features
+/*Directorio backend*/
+npm run test:backend
 
+/*Directorio frontend*/
+npm run test:frontend
+
+
+# To do 
+
+linter
+
+maker tests

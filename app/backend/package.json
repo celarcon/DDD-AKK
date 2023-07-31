@@ -1,8 +1,8 @@
 {
   "name": "backend",
-  "version": "1.0.0",
-  "description": "DDD skeleton scebrian",
   "author": "Santiago Cebrián Alarcón",
+  "version": "1.0.0",
+  "description": "backend",
   "license": "ISC",
   "engines": {
     "node": ">=18.17.0",
