@@ -20,5 +20,3 @@ npm run test:frontend
 # To do 
 
 linter
-
-maker tests
