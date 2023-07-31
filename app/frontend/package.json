@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev:frontend": "vite --port 3000",
-    "test:frontend": "jest --watchAll --config=jest.config.ts",
+    "test:frontend": "jest --config=jest.config.ts",
     "build": "vite build",
     "preview": "vite preview"
   },
