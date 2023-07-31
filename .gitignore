@@ -1,6 +1,9 @@
-node_modules/
-dist/
+**/node_modules/
+**/dist/
 .tmp
 logs/
 data
 test-results.xml
+**/.npm
+**/.env
+**/.env.test

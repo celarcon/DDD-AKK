@@ -1,5 +1,5 @@
 import { AfterAll, BeforeAll, Given , Then } from '@cucumber/cucumber';
-import { BackendApp } from '../../../../../src/app/backend/BackendApp';
+import { BackendApp } from '../../../src/BackendApp';
 import request from 'supertest';
 
 let _request: request.Test;

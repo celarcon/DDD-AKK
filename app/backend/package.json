@@ -1,5 +1,5 @@
 {
-  "name": "ddd-akk",
+  "name": "backend",
   "version": "1.0.0",
   "description": "DDD skeleton scebrian",
   "author": "Santiago Cebrián Alarcón",
@@ -9,8 +9,8 @@
     "npm": ">=9.8.1"
   },
   "scripts": {
-    "dev:backend": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  ./src/app/backend/start.ts",
-    "test:backend:features": "NODE_ENV=test cucumber-js -p backend"
+    "dev:backend": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  ./src/start.ts",
+    "test:backend": "NODE_ENV=test cucumber-js -p backend"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
