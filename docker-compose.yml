@@ -12,7 +12,7 @@ services:
     container_name: frontend
   backend:
     env_file: ./app/backend/.env.develop
-    build: ./app/backend 
+    build: ./app/backend
     volumes:
       - ./app/backend:/backend
       - /backend/node_modules

@@ -21,3 +21,7 @@ test-all:
 
 stop:
 	- docker compose down
+
+install-dependencies-local:
+	- npm install ./app/frontend/ --prefix ./app/frontend/
+	- npm install ./app/backend/ --prefix ./app/backend/

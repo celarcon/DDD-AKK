@@ -1,13 +1,13 @@
-import { BackendApp } from './BackendApp';
+import { BackendApp } from './BackendApp'
 
 try {
-	new BackendApp().start();
+	new BackendApp().start()
 } catch (e) {
-	console.log(e);
-	process.exit(1);
+	console.log(e)
+	process.exit(1)
 }
 
 process.on('uncaughtException', err => {
-	console.log('uncaughtException', err);
-	process.exit(1);
-});
+	console.log('uncaughtException', err)
+	process.exit(1)
+})

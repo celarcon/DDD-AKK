@@ -1,23 +1,23 @@
-import { AfterAll, BeforeAll, Given , Then } from '@cucumber/cucumber';
-import { BackendApp } from '../../../src/BackendApp';
-import request from 'supertest';
+import { AfterAll, BeforeAll, Given, Then } from '@cucumber/cucumber'
+import { BackendApp } from '../../../src/BackendApp'
+import request from 'supertest'
 
-let _request: request.Test;
-let application: BackendApp;
+let _request: request.Test
+let application: BackendApp
 
 Given('I send a GET request to {string}', (route: string) => {
-	_request = request(application.httpServer).get(route);
-});
+	_request = request(application.httpServer).get(route)
+})
 
 Then('the response status code should be {int}', async (status: number) => {
-	await _request.expect(status);
-});
+	await _request.expect(status)
+})
 
 BeforeAll(async () => {
-	application = new BackendApp();
-	await application.start();
-});
+	application = new BackendApp()
+	await application.start()
+})
 
 AfterAll(async () => {
-	await application.stop();
-});
+	await application.stop()
+})
