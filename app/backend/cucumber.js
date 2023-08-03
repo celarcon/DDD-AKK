@@ -1,6 +1,6 @@
 const backend = {
-	require: ['./tests/features/step_definitions/*.steps.ts'],
-	paths: ['./tests/features/**/*.feature'],
+	require: ['./tests/e2e/step_definitions/*.steps.ts'],
+	paths: ['./tests/e2e/**/*.feature'],
 	requireModule: ['ts-node/register'],
 	publishQuiet: true,
 }

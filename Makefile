@@ -10,14 +10,24 @@ start-backend:
 	- make start ARGS=backend
 
 test-frontend:
-	docker compose run --rm frontend npm run test:frontend $(ARGS)
+	- docker compose run --rm frontend npm run test:frontend $(ARGS)
 
-test-backend:
-	docker compose run --rm backend npm run test:backend $(ARGS)
+unit-test-backend:
+	- docker compose run --rm backend npm run test:backend:unit $(ARGS)
 
+e2e-test-backend:
+	- docker compose run --rm backend npm run test:backend:e2e $(ARGS)
+
+unit-test-all:
+	- make unit-test-backend
+
+e2e-test-all:
+	- make e2e-test-backend
+	
 test-all:
 	- make test-frontend
-	- make test-backend
+	- make e2e-test-backend
+	- make unit-test-backend
 
 stop:
 	- docker compose down

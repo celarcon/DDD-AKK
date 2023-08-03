@@ -1,4 +1,7 @@
 services:
-  App.controllers.StatusGetController:
+  controllers.StatusGetController:
     class: ../../controllers/StatusGetController
     arguments: []
+  controllers.MessagePutController:
+    class: ../../controllers/message/MessagePutController
+    arguments: ['@application.MessageCreator']
