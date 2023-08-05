@@ -8,7 +8,7 @@ export class MessagePutController implements Controller {
 
 	async run(req: Request, res: Response) {
 		const { id, name, text } = req.body
-		await this.messageCreator.run(id, name, text)
+		await this.messageCreator.run({ id, name, text })
 		res.status(httpStatus.CREATED).send()
 	}
 }

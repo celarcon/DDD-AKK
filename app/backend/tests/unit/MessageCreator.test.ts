@@ -17,7 +17,7 @@ describe('MessageCreator', () => {
 		const text = 'some-text'
 		const expectMessage = new Message(id, name, text)
 
-		await creator.run(id, name, text)
+		await creator.run({ id, name, text })
 
 		repository.assetSaveHaveBeenCalledWith(expectMessage)
 	})
