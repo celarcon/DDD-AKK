@@ -12,6 +12,10 @@ start-backend:
 test-frontend:
 	- docker compose run --rm frontend npm run test:frontend $(ARGS)
 
+test-backend:
+	- make e2e-test-backend
+	- make unit-test-backend
+
 unit-test-backend:
 	- docker compose run --rm backend npm run test:backend:unit $(ARGS)
 

@@ -10,6 +10,13 @@ export class FileMessageRepository implements MessageRepository {
 		fs.promises.writeFile(this.filePath(message.id), v8.serialize(message))
 	}
 
+	async search(messageId: string): Promise<Message> {
+		const messageDate = await fs.promises.readFile(this.filePath(messageId))
+		const { id, name, text } = v8.deserialize(messageDate)
+
+		return new Message(id, name, text)
+	}
+
 	private filePath(id: string): string {
 		return `${this.FILE_PATH}.${id}.repo`
 	}
