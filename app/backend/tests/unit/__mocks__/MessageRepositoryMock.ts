@@ -1,5 +1,5 @@
-import { Message } from '../../../src/context/domain/Message'
-import { MessageRepository } from '../../../src/context/domain/MessageRepository'
+import { Message } from '../../../src/context/domain/message/Message'
+import { MessageRepository } from '../../../src/context/domain/message/MessageRepository'
 
 export class MessageRepositoryMock implements MessageRepository {
 	private saveMock: jest.Mock

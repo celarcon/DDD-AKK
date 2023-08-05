@@ -1,6 +1,6 @@
 services:
   application.MessageCreator:
-    class: ../../context/application/MessageCreator
+    class: ../../context/application/message/MessageCreator
     arguments: ['@domain.MessageRepository']
   domain.MessageRepository:
     class: ../../context/infrastructure/persistence/FileMessageRepository

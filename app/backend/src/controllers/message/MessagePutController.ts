@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { MessageCreator } from '../../context/application/MessageCreator'
+import { MessageCreator } from '../../context/application/message/MessageCreator'
 import { Controller } from '../Controller'
 import httpStatus from 'http-status'
 

@@ -1,7 +1,7 @@
 import fs from 'fs'
 import v8 from 'v8'
-import { Message } from '../../domain/Message'
-import { MessageRepository } from '../../domain/MessageRepository'
+import { Message } from '../../domain/message/Message'
+import { MessageRepository } from '../../domain/message/MessageRepository'
 
 export class FileMessageRepository implements MessageRepository {
 	private FILE_PATH = `${__dirname}/messages`
@@ -17,7 +17,7 @@ export class FileMessageRepository implements MessageRepository {
 		const messageDate = await fs.promises.readFile(this.filePath(messageId))
 		const { id, name, text } = v8.deserialize(messageDate)
 
-		return new Message(id, name, text)
+		return new Message({ id, name, text })
 	}
 
 	private filePath(id: string): string {
