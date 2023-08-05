@@ -6,7 +6,7 @@ Feature: Create a new message
     Given I send a PUT request to "/message" with body:
     """
     {
-      "id":"1",
+      "id":"95ecc380-afe9-11e4-9b6c-751b66dd541e",
       "name": "name test",
       "text": "text test"
     }

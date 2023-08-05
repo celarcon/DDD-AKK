@@ -7,7 +7,10 @@ export class FileMessageRepository implements MessageRepository {
 	private FILE_PATH = `${__dirname}/messages`
 
 	async save(message: Message): Promise<void> {
-		fs.promises.writeFile(this.filePath(message.id), v8.serialize(message))
+		fs.promises.writeFile(
+			this.filePath(message.id.toString()),
+			v8.serialize(message),
+		)
 	}
 
 	async search(messageId: string): Promise<Message> {
