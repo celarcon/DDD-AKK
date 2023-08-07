@@ -1,38 +1,36 @@
 import { MessageCreator } from '../../src/context/application/message/MessageCreator'
 import { Message } from '../../src/context/domain/message/Message'
-import { MessageId } from '../../src/context/domain/message/MessageId'
-import { MessageName } from '../../src/context/domain/message/MessageName'
+import { MessageMother } from '../../src/context/domain/message/MessageMother'
 import { MessageNameLengthExceeded } from '../../src/context/domain/message/MessageNameLengthExceeded'
-import { MessageText } from '../../src/context/domain/message/MessageText'
 import { MessageRepositoryMock } from './__mocks__/MessageRepositoryMock'
-
+import { CreateMessageRequestMother } from './__mocks__/CreateMessageRequestMother'
 describe('MessageCreator', () => {
 	let repository: MessageRepositoryMock
-
+	let creator: MessageCreator
 	beforeEach(() => {
 		repository = new MessageRepositoryMock()
+		creator = new MessageCreator(repository)
 	})
 
 	it('should create a valid message', async () => {
-		const creator = new MessageCreator(repository)
+		const request = CreateMessageRequestMother.random()
 
-		const id = new MessageId('95ecc380-afe9-11e4-9b6c-751b66dd541e')
-		const name = new MessageName('name')
-		const text = new MessageText('text')
-		const expectMessage = new Message({ id, name, text })
+		const expectMessage: Message = MessageMother.fromRequest(request)
 
-		await creator.run({
-			id: id.value,
-			name: name.toString(),
-			text: text.toString(),
-		})
+		await creator.run(request)
 
 		repository.assetSaveHaveBeenCalledWith(expectMessage)
 	})
 
-	it('should throw MessageNameLengthExceeded', () => {
+	it('should throw MessageNameLengthExceeded', async () => {
 		expect(() => {
-			new MessageName('name'.repeat(30))
+			const request = CreateMessageRequestMother.invalidRequest()
+
+			const message = MessageMother.fromRequest(request)
+
+			creator.run(request)
+
+			repository.assetLastSavedCurseIs(message)
 		}).toThrow(MessageNameLengthExceeded)
 	})
 })

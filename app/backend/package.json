@@ -29,7 +29,8 @@
 		"node-dependency-injection": "^2.7.1",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.1.6",
-		"uuid": "^9.0.0"
+		"uuid": "^9.0.0",
+		"@faker-js/faker": "^8.0.2"
 	},
 	"devDependencies": {
 		"@cucumber/cucumber": "^9.3.0",

@@ -6,7 +6,6 @@ import Router from 'express-promise-router'
 import helmet from 'helmet'
 import * as http from 'http'
 import httpStatus from 'http-status'
-
 import { registerRoutes } from './routes'
 
 export class Server {
@@ -32,7 +31,6 @@ export class Server {
 
 		router.use(
 			(err: Error, req: Request, res: Response, next: NextFunction): void => {
-				console.log(err)
 				if (err) {
 					res.status(httpStatus.INTERNAL_SERVER_ERROR).send(err.message)
 				} else {
@@ -69,14 +67,11 @@ export class Server {
 				this.httpServer.close(error => {
 					if (error) {
 						reject(error)
-
 						return
 					}
-
 					resolve()
 				})
 			}
-
 			resolve()
 		})
 	}

@@ -15,4 +15,8 @@ export class MessageRepositoryMock implements MessageRepository {
 	assetSaveHaveBeenCalledWith(expected: Message): void {
 		expect(this.saveMock).toHaveBeenCalledWith(expected)
 	}
+
+	assetLastSavedCurseIs(expected: Message): void {
+		expect(this.saveMock).toHaveBeenCalledWith(expected)
+	}
 }
