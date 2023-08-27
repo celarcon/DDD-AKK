@@ -1,5 +1,5 @@
-import { WordMother } from '../../shared/domain/WordMother'
-import { MessageText } from './MessageText'
+import { WordMother } from '../../../shared/domain/WordMother'
+import { MessageText } from '../attributes/MessageText'
 
 export class MessageTextMother {
 	static create(value: string): MessageText {

@@ -17,7 +17,7 @@ export class FileMessageRepository implements MessageRepository {
 		const messageDate = await fs.promises.readFile(this.filePath(messageId))
 		const { id, name, text } = v8.deserialize(messageDate)
 
-		return new Message({ id, name, text })
+		return new Message(id, name, text)
 	}
 
 	private filePath(id: string): string {

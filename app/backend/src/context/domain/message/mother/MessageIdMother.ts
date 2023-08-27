@@ -1,5 +1,5 @@
-import { Uuid } from '../../shared/domain/value-object/Uuid'
-import { MessageId } from './MessageId'
+import { Uuid } from '../../../shared/domain/value-object/Uuid'
+import { MessageId } from '../attributes/MessageId'
 
 export class MessageIdMother {
 	static create(value: string): MessageId {

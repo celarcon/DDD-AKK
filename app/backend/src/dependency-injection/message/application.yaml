@@ -1,7 +1,15 @@
 services:
+  TypeOrmConnectionManager:
+    factory:
+      class: ../../context/shared/infrastructure/persistence/typeOrm/ClientFactory
+      method: 'createClient'
+    arguments: ['backend']
+  domain.MessageRepository:
+    class: ../../context/infrastructure/persistence/TypeOrmMessageRepository
+    arguments: ['@TypeOrmConnectionManager']
   application.MessageCreator:
     class: ../../context/application/message/MessageCreator
     arguments: ['@domain.MessageRepository']
-  domain.MessageRepository:
-    class: ../../context/infrastructure/persistence/FileMessageRepository
-    arguments: []
+  EnviromentArranger:
+    class: ../../context/shared/infrastructure/persistence/typeOrm/TypeOrmEnviromentArranger
+    arguments: ['@TypeOrmConnectionManager']

@@ -1,9 +1,9 @@
-import { MessageId } from '../../../src/context/domain/message/MessageId'
-import { MessageName } from '../../../src/context/domain/message/MessageName'
-import { MessageText } from '../../../src/context/domain/message/MessageText'
-import { MessageIdMother } from '../../../src/context/domain/message/MessageIdMother'
-import { MessageNameMother } from '../../../src/context/domain/message/MessageNameMother'
-import { MessageTextMother } from '../../../src/context/domain/message/MessageTextMother'
+import { MessageId } from '../../../src/context/domain/message/attributes/MessageId'
+import { MessageName } from '../../../src/context/domain/message/attributes/MessageName'
+import { MessageText } from '../../../src/context/domain/message/attributes/MessageText'
+import { MessageIdMother } from '../../../src/context/domain/message/mother/MessageIdMother'
+import { MessageNameMother } from '../../../src/context/domain/message/mother/MessageNameMother'
+import { MessageTextMother } from '../../../src/context/domain/message//mother/MessageTextMother'
 import { MessageCreatorRequest } from '../../../src/context/application/message/MessageCreatorRequest'
 
 export class CreateMessageRequestMother {

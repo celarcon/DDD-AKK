@@ -10,13 +10,6 @@ make start
 
 # Para tirar los tests
 
-/*Directorio backend*/
-npm run test:backend
+Leer archivo makerfile
 
-/*Directorio frontend*/
-npm run test:frontend
-
-
-# To do 
-
-linter
+# To do

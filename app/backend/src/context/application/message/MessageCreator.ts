@@ -1,8 +1,8 @@
 import { Message } from '../../domain/message/Message'
-import { MessageId } from '../../domain/message/MessageId'
-import { MessageName } from '../../domain/message/MessageName'
+import { MessageId } from '../../domain/message/attributes/MessageId'
+import { MessageName } from '../../domain/message/attributes/MessageName'
 import { MessageRepository } from '../../domain/message/MessageRepository'
-import { MessageText } from '../../domain/message/MessageText'
+import { MessageText } from '../../domain/message/attributes/MessageText'
 import { MessageCreatorRequest } from './MessageCreatorRequest'
 
 export class MessageCreator {
@@ -17,7 +17,7 @@ export class MessageCreator {
 		const name = new MessageName(request.name)
 		const text = new MessageText(request.text)
 
-		const message = new Message({ id, name, text })
+		const message = new Message(id, name, text)
 		return await this.repository.save(message)
 	}
 }
