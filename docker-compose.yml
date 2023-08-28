@@ -30,3 +30,10 @@ services:
       - 5432:5432
     volumes:
       - ./data:/var/lib/postgresql/data
+  db-test:
+    image: postgres:15.3
+    container_name: db-test
+    env_file:
+      - .env.db.test
+    ports:
+      - 5434:5432
