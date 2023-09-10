@@ -1,0 +1,8 @@
+.title {
+	font-weight: bold;
+	font-family: $main-font-family;
+	font-size: 30px;
+	margin: 2rem;
+	text-align: center;
+	color: map-get($colors, blue-grey);
+}

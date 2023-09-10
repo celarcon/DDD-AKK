@@ -1,0 +1,50 @@
+.msg-card {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 2px;
+	padding: 1rem;
+	background: white;
+	margin: 2rem;
+}
+
+.msg-card-title {
+	font-weight: 300px;
+}
+
+.msg-item {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	padding: 1rem;
+	margin: 2px;
+}
+
+.msg-item-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	max-height: 40vh;
+	overflow-y: scroll;
+}
+
+.msg-item-container::-webkit-scrollbar-thumb {
+	background: map-get($colors, blue-grey);
+	border-radius: 2px;
+}
+
+.msg-item-container::-webkit-scrollbar {
+	width: 5px;
+	height: 8px;
+	background-color: map-get($colors, blight-blue);
+}
+
+.msg-create {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 2px;
+	padding: 1rem;
+	background: white;
+	margin: 2rem;
+}
+
+.msg-form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}

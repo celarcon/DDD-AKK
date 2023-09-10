@@ -12,4 +12,8 @@ make start
 
 Leer archivo makerfile
 
-# To do
+# env
+
+crear archivos de entorno mirar:
+.env.\*\*.example
+y quitarle el ".example"

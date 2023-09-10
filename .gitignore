@@ -5,9 +5,7 @@ logs/
 data
 test-results.xml
 **/.npm
-**/.env
-**/.env.test
-**/.env.develop
-**/.env.*
 .env.db
-.env.*
+.env.test
+**/.env
+**/.env.develop

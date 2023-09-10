@@ -1,10 +1,19 @@
-import { render, screen } from "@testing-library/react";
-import { App } from "../src/App";
+import { render, screen } from '@testing-library/react'
+import { Header } from '../src/sections/header/Header'
+import { TITLE } from '../src/i18n/translations/constants/Translates'
+import i18n from '../src/i18n/i18n'
+import esJSON from '../src/i18n/translations/es/global.json'
 
-test("App component display header", () => {
-	render(<App />);
+describe('testSuite', () => {
+	beforeEach(() => {
+		i18n.init()
+	})
 
-	const heading = screen.getByText("Vite React Best Practices Template");
+	test('App component display header', () => {
+		render(<Header />)
 
-	expect(heading).toBeInTheDocument();
-});
+		const heading = screen.getByText(esJSON.HEADER.TITLE)
+
+		expect(heading).toBeInTheDocument()
+	})
+})
