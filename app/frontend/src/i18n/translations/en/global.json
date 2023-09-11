@@ -2,5 +2,9 @@
 	"HEADER": {
 		"TITLE": "Messages"
 	},
-	"LANGUAJE": "Language"
+	"LANGUAJE": "Language",
+	"CREATE": "Create",
+	"WRITE_A_MESSAGE": "Escribe un mensage",
+	"NAME": "Nombre",
+	"MESSAGES": "Messages"
 }

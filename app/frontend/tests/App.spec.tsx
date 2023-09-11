@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react'
 import { Header } from '../src/sections/header/Header'
-import { TITLE } from '../src/i18n/translations/constants/Translates'
 import i18n from '../src/i18n/i18n'
 import esJSON from '../src/i18n/translations/es/global.json'
 

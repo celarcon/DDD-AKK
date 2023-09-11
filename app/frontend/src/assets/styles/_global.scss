@@ -68,3 +68,17 @@ body {
 .tranlation-button:hover {
 	background: map-get($colors, blue-grey);
 }
+
+.input-text {
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+	padding: 1rem;
+	outline: none;
+	resize: none;
+}
+
+.input-text:focus {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px;
+}
