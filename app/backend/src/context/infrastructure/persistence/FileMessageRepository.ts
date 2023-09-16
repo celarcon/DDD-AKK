@@ -13,6 +13,8 @@ export class FileMessageRepository implements MessageRepository {
 		)
 	}
 
+	async retrieve(): Promise<any> {}
+
 	async search(messageId: string): Promise<Message> {
 		const messageDate = await fs.promises.readFile(this.filePath(messageId))
 		const { id, name, text } = v8.deserialize(messageDate)

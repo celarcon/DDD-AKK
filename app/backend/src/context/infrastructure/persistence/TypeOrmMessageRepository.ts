@@ -10,6 +10,12 @@ export class TypeOrmMessageRepository
 	extends TypeOrmRepository<Message>
 	implements MessageRepository
 {
+	public async retrieve(): Promise<Array<Message>> {
+		const repository = await this.repository()
+
+		return await repository.find()
+	}
+
 	public save(message: Message): Promise<void> {
 		return this.persist(message)
 	}

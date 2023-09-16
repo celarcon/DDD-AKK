@@ -6,6 +6,6 @@ data
 test-results.xml
 **/.npm
 .env.db
-.env.test
+.env.db.test
 **/.env
 **/.env.develop

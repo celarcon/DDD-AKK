@@ -14,7 +14,7 @@ export class ClientFactory {
 				username,
 				password,
 				database,
-				logging: true,
+				logging: false,
 				synchronize: true,
 				entities: [
 					__dirname +

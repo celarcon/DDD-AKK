@@ -5,3 +5,6 @@ services:
   controllers.MessagePutController:
     class: ../../controllers/message/MessagePutController
     arguments: ['@application.MessageCreator']
+  controllers.MessagesGetController:
+    class: ../../controllers/message/MessagesGetController
+    arguments: ['@application.MessagesRetrieve']

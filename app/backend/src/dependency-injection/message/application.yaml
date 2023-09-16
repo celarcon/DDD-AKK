@@ -10,6 +10,9 @@ services:
   application.MessageCreator:
     class: ../../context/application/message/MessageCreator
     arguments: ['@domain.MessageRepository']
+  application.MessagesRetrieve:
+    class: ../../context/application/message/MessagesRetrieve
+    arguments: ['@domain.MessageRepository']
   EnviromentArranger:
     class: ../../context/shared/infrastructure/persistence/typeOrm/TypeOrmEnviromentArranger
     arguments: ['@TypeOrmConnectionManager']

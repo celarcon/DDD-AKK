@@ -28,6 +28,23 @@ Then('the response should be empty', () => {
 	assert.deepStrictEqual(_response.body, {})
 })
 
+Given(
+	'I send a GET request to {string} to retrieve a messages list',
+	(route: string) => {
+		_request = request(application.httpServer).get(route)
+	},
+)
+
+Then('the response should be a messages list', () => {
+	assert.deepStrictEqual(_response.body, [
+		{
+			id: '95ecc380-afe9-11e4-9b6c-751b66dd541e',
+			name: 'name test',
+			text: 'text test',
+		},
+	])
+})
+
 BeforeAll(async () => {
 	application = new BackendApp()
 	await application.start()

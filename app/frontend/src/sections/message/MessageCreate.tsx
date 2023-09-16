@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react'
 import { MessageContext } from '../../contexts/MessageContext'
+import { v4 as uuid } from 'uuid'
 import { useTranslation } from 'react-i18next'
 import {
 	NAME,
@@ -13,7 +14,7 @@ export const MessageCreate = () => {
 	const { addMessage } = useContext(MessageContext)
 	const creeateMessage = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		addMessage({ id: `${Math.random()}`, name: name, text: message })
+		addMessage({ id: uuid(), name: name, text: message })
 		setMessage('')
 		setName('')
 	}

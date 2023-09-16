@@ -1,6 +1,6 @@
 import { Message } from '../../../src/context/domain/message/Message'
 import { MessageRepository } from '../../../src/context/domain/message/MessageRepository'
-
+import { CreateMessageRequestMother } from './CreateMessageRequestMother'
 export class MessageRepositoryMock implements MessageRepository {
 	private saveMock: jest.Mock
 
@@ -10,6 +10,10 @@ export class MessageRepositoryMock implements MessageRepository {
 
 	async save(message: Message): Promise<void> {
 		this.saveMock(message)
+	}
+
+	async retrieve(): Promise<any> {
+		return [CreateMessageRequestMother.random()]
 	}
 
 	assetSaveHaveBeenCalledWith(expected: Message): void {
