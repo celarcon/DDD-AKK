@@ -14,9 +14,15 @@ export abstract class TypeOrmRepository<T extends AggregateRoot> {
 		return (await this._client).getRepository(this.entitySchema())
 	}
 
-	protected async retrieve(): Promise<any> {
+	protected async retrieve(): Promise<Array<T> | void> {
 		const repository = await this.repository()
-		await repository.find()
+		return await repository.find()
+	}
+
+	protected async delete(aggregateRoot: T): Promise<void> {
+		const repository = await this.repository()
+		console.log(aggregateRoot)
+		repository.delete(aggregateRoot as any)
 	}
 
 	protected async persist(aggregateRoot: T): Promise<void> {

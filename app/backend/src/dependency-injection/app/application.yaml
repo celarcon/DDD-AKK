@@ -8,3 +8,6 @@ services:
   controllers.MessagesGetController:
     class: ../../controllers/message/MessagesGetController
     arguments: ['@application.MessagesRetrieve']
+  controllers.MessageDeleteController:
+    class: ../../controllers/message/MessageDeleteController
+    arguments: ['@application.MessageDelete']

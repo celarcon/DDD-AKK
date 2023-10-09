@@ -12,19 +12,23 @@ export class TypeOrmMessageRepository
 {
 	public async retrieve(): Promise<Array<Message>> {
 		const repository = await this.repository()
-
 		return await repository.find()
 	}
 
-	public save(message: Message): Promise<void> {
-		return this.persist(message)
+	public async save(message: Message): Promise<void> {
+		return await this.persist(message)
 	}
 
-	public async seach(id: MessageId): Promise<Nullable<Message>> {
+	public async deleteMessage(messageId: MessageId): Promise<void> {
 		const repository = await this.repository()
+		await repository.softDelete({ id: { value: messageId.toString() } })
+	}
 
-		const message = await repository.findOne({ where: { id: id.toString() } })
-
+	public async seach(messageId: MessageId): Promise<Nullable<Message>> {
+		const repository = await this.repository()
+		const message = await repository.findOneBy({
+			id: { value: messageId.toString() },
+		})
 		return message
 	}
 

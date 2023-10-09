@@ -4,9 +4,12 @@ export class PostRefactoringTIMESTAMP implements MigrationInterface {
 	async up(queryRunner: QueryRunner): Promise<void> {
 		await queryRunner.query(
 			`CREATE TABLE message (
-                id varchar PRIMARY key,
+                "id" varchar PRIMARY key,
                 "name" varchar NULL,
-                "text" varchar NULL
+                "text" varchar NULL,
+				"created_at" timestamp NOT NULL,
+				"updated_at" timestamp  NOT NULL,
+				"deleted_at" timestamp  DEFAULT NULL
             )`,
 		)
 	}

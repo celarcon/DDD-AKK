@@ -13,6 +13,9 @@ services:
   application.MessagesRetrieve:
     class: ../../context/application/message/MessagesRetrieve
     arguments: ['@domain.MessageRepository']
+  application.MessageDelete:
+    class: ../../context/application/message/MessageDelete
+    arguments: ['@domain.MessageRepository']
   EnviromentArranger:
     class: ../../context/shared/infrastructure/persistence/typeOrm/TypeOrmEnviromentArranger
     arguments: ['@TypeOrmConnectionManager']

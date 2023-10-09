@@ -12,7 +12,8 @@
 		"noEmit": false,
 		"resolveJsonModule": true,
 		"noUnusedLocals": true,
-		"outDir": "./dist"
+		"outDir": "./dist",
+		"strictPropertyInitialization": false
 	},
 	"include": ["src/**/**.ts", "tests/**/**.ts"],
 	"exclude": ["node_modules"]

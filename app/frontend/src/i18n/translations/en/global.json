@@ -4,7 +4,7 @@
 	},
 	"LANGUAJE": "Language",
 	"CREATE": "Create",
-	"WRITE_A_MESSAGE": "Escribe un mensage",
-	"NAME": "Nombre",
+	"WRITE_A_MESSAGE": "Write a message...",
+	"NAME": "Name",
 	"MESSAGES": "Messages"
 }

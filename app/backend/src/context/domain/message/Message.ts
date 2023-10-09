@@ -7,6 +7,9 @@ export class Message extends AggregateRoot {
 	readonly id: MessageId
 	readonly name: MessageName
 	readonly text: MessageText
+	readonly created_at: Date
+	readonly updated_at: Date
+	readonly deleted_at: Date
 
 	constructor(id: MessageId, name: MessageName, text: MessageText) {
 		super()
