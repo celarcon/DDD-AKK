@@ -8,10 +8,12 @@ type Children = {
 const MessageContext = createContext<any>({})
 
 const MessageContextProvider = ({ children }: Children) => {
-	const [messages, addMessage] = useMessage()
+	const [messages, addMessage, retrievePager, pager] = useMessage()
 
 	return (
-		<MessageContext.Provider value={{ messages, addMessage }}>
+		<MessageContext.Provider
+			value={{ messages, addMessage, retrievePager, pager }}
+		>
 			{children}
 		</MessageContext.Provider>
 	)

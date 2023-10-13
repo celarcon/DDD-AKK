@@ -29,20 +29,33 @@ Then('the response should be empty', () => {
 })
 
 Given(
-	'I send a GET request to {string} to retrieve a messages list',
-	(route: string) => {
-		_request = request(application.httpServer).get(route)
+	'I send a GET request to {string} to retrieve a messages list with body:',
+	(route: string, body: string) => {
+		_request = request(application.httpServer)
+			.get(route)
+			.send(JSON.parse(body) as object)
 	},
 )
 
 Then('the response should be a messages list', () => {
-	assert.deepStrictEqual(_response.body, [
-		{
-			id: '95ecc380-afe9-11e4-9b6c-751b66dd541e',
-			name: 'name test',
-			text: 'text test',
+	_request.expect({
+		data: [
+			{
+				id: '95ecc380-afe9-11e4-9b6c-751b66dd541e',
+				name: 'name test',
+				text: 'text test',
+			},
+		],
+		pager: {
+			current: 1,
+			total_pages: 1,
+			total_elements: 1,
 		},
-	])
+		sortedBy: {
+			columnName: 'name',
+			ordering: 'desc',
+		},
+	})
 })
 
 BeforeAll(async () => {

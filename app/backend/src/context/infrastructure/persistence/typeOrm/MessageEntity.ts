@@ -26,12 +26,10 @@ export const MessageEntity = new EntitySchema<Message>({
 		created_at: {
 			type: Date,
 			createDate: true,
-			default: new Date(),
 		},
 		updated_at: {
 			type: Date,
 			updateDate: true,
-			default: new Date(),
 		},
 		deleted_at: {
 			type: Date,

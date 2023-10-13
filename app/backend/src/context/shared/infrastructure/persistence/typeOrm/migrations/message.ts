@@ -1,6 +1,5 @@
 import { MigrationInterface, QueryRunner } from 'typeorm'
-
-export class PostRefactoringTIMESTAMP implements MigrationInterface {
+export class Message1696875662596 implements MigrationInterface {
 	async up(queryRunner: QueryRunner): Promise<void> {
 		await queryRunner.query(
 			`CREATE TABLE message (
@@ -10,7 +9,7 @@ export class PostRefactoringTIMESTAMP implements MigrationInterface {
 				"created_at" timestamp NOT NULL,
 				"updated_at" timestamp  NOT NULL,
 				"deleted_at" timestamp  DEFAULT NULL
-            )`,
+            );`,
 		)
 	}
 

@@ -25,7 +25,7 @@ export const register = (router: Router): void => {
 		'controllers.MessageDeleteController',
 	)
 
-	router.get('/messages', (req: Request, res: Response) =>
+	router.post('/messages', (req: Request, res: Response) =>
 		MessagesGetController.run(req, res),
 	)
 	router.put(

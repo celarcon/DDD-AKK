@@ -39,3 +39,6 @@ stop:
 install-dependencies-local:
 	- npm install ./app/frontend/ --prefix ./app/frontend/
 	- npm install ./app/backend/ --prefix ./app/backend/
+
+migrations:
+	- docker compose run --rm backend npx typeorm-ts-node-commonjs migration:run -d ./src/context/shared/infrastructure/persistence/typeOrm/DataSource.ts

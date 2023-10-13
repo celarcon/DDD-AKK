@@ -3,6 +3,7 @@ import { MessageContext } from '../../contexts/MessageContext'
 import { v4 as uuid } from 'uuid'
 import { useTranslation } from 'react-i18next'
 import {
+	CREATE,
 	NAME,
 	WRITE_A_MESSAGE,
 } from '../../i18n/translations/constants/Translates'
@@ -43,7 +44,7 @@ export const MessageCreate = () => {
 					></textarea>
 				</div>
 				<div>
-					<input className='btn-submit' type='submit' value='CREAR' />
+					<input className='btn-submit' type='submit' value={t(CREATE)} />
 				</div>
 			</form>
 		</div>

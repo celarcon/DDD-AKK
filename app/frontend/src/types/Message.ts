@@ -12,5 +12,6 @@ export type MessagesTypeState = Record<
 		id?: string
 		name?: string
 		text?: string
+		page?: number
 	}
 >
